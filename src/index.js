@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// Importinh Season Display from the file SeasonDisplay.js which is in the same
+// directory as file index.sj
 import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
@@ -32,6 +35,7 @@ class App extends React.Component {
             return <div>Error: {this.state.errorMessage}</div>
         }
         if (!this.state.errorMessage && this.state.lat) {
+
             return <SeasonDisplay  lat={this.state.lat}/>
         }
         return <div>Loading!</div>

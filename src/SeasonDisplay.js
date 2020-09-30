@@ -1,11 +1,9 @@
 import React from 'react';
 
-const SeasonDisplay = () => {
-  window.navigator.geolocation.getCurrentPosition(
-    (position) => console.log(position),
-    (err) => console.log(err)
-  );
-
+// *Setting callback props as "PROPERTIES" which has assigned value of prop. 
+// lat={this.state.lat}
+const SeasonDisplay = (props) => {
+  console.log(props.lat)
   return <div>Season Display</div>
 };
 
