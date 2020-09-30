@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Spinner from './Spinner';
+
 // Importinh Season Display from the file SeasonDisplay.js which is in the same
 // directory as file index.sj
 import SeasonDisplay from './SeasonDisplay';
@@ -24,21 +26,30 @@ class App extends React.Component {
         );
     }
 
-    componentDidUpdate() {
-        console.log('My component was just updated - it rerendered!')
-    }
-    // React says we have to define render !!
+    // componentDidUpdate() {
+    //     console.log('My component was just updated - it rerendered!')
+    // }
 
-    // Rendering by Statemens of class App
-    render() {
+    renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage}</div>
         }
         if (!this.state.errorMessage && this.state.lat) {
-
+            // SeasonDisplay component imported from SeasonDisplay.js
+            // Setting prop lat={this.state.lat};
+            //Sending value of prop to SeasonDisplay.js *
             return <SeasonDisplay  lat={this.state.lat}/>
         }
-        return <div>Loading!</div>
+        return <Spinner message="Please accept location request"/>
+    }
+    // React says we have to define render !!
+    // Rendering by Statemens of class App
+    render() {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        )
     }
 }
 
