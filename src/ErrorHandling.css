@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.background {
+    background-color: red;
+    height: 100vh;
+    width: auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    height: 100vh;
+}

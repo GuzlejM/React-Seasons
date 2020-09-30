@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 
 import Spinner from './Spinner';
 
-// Importinh Season Display from the file SeasonDisplay.js which is in the same
+// Importing Season Display from the file SeasonDisplay.js which is in the same
 // directory as file index.sj
+import ErrorHandling from './ErrorHandling';
 import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
@@ -32,7 +33,7 @@ class App extends React.Component {
 
     renderContent() {
         if (this.state.errorMessage && !this.state.lat) {
-            return <div>Error: {this.state.errorMessage}</div>
+            return <ErrorHandling err={this.state.errorMessage} />
         }
         if (!this.state.errorMessage && this.state.lat) {
             // SeasonDisplay component imported from SeasonDisplay.js

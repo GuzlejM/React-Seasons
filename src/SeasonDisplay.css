@@ -20,11 +20,16 @@
 .season-display.winter i {
     color: skyblue
 }
+.season-display.winter h1 {
+    color: skyblue
+}
 
 .season-display.summer i {
     color: red;
 }
-
+.season-display.summer h1 {
+    color: red;
+}
 .winter {
     background-color: aliceblue
 }
